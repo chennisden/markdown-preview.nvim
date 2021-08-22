@@ -1,12 +1,8 @@
 " set to 1, the vim will open the preview window once enter the markdown
 " buffer
 if !exists('g:mkdp_auto_start')
-  let g:mkdp_auto_start = 0
+  let g:mkdp_auto_start = 1
 endif
-
-" let g:mkdp_auto_open = 0
-" set to 1, the vim will auto open preview window when you edit the
-" markdown file
 
 " set to 1, the vim will auto close current preview window when change
 " from markdown buffer to another buffer
@@ -121,7 +117,7 @@ function! s:init() abort
       autocmd BufEnter,FileType * if index(g:mkdp_filetypes, &filetype) !=# -1 | call s:init_command() | endif
     endif
     if g:mkdp_auto_start
-      execute 'autocmd BufEnter *.{md,mkd,mdown,mkdn,mdwn,' . join(g:mkdp_filetypes, ',') . '} call mkdp#util#open_preview_page()'
+      execute 'autocmd BufEnter *.{MD,mdx,md,mkd,mdown,mkdn,mdwn' . join(g:mkdp_filetypes, ',') . '} call mkdp#util#open_preview_page()'
     endif
   augroup END
 endfunction
