@@ -1,7 +1,7 @@
 " set to 1, the vim will open the preview window once enter the markdown
 " buffer
 if !exists('g:mkdp_auto_start')
-  let g:mkdp_auto_start = 1
+  let g:mkdp_auto_start = 0
 endif
 
 " set to 1, the vim will auto close current preview window when change
